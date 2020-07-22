@@ -35,3 +35,19 @@ pipelineJob('theme-park-job-docker') {
         }
     }
 }
+
+pipelineJob('theme-park-job-aws') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/crypto991/theme-park-app.git'
+                    }
+                    branch 'master'
+                    scriptPath('Jenkinsfile-aws')
+                }
+            }
+        }
+    }
+}
